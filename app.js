@@ -1,6 +1,7 @@
 const express=require('express');
 const bodyParser=require('body-parser');
 const HttpError=require('./models/http-error');
+const mongoose=require('mongoose');
 
 const placesRoutes=require('./routes/places-routes');
 const usersRoutes=require('./routes/users-routes');
@@ -27,7 +28,11 @@ app.use((error,req,res,next)=>{
 });
 
 
+mongoose.connect(
+    'mongodb+srv://Ray:icecreamhyouka@cluster0.stx6kcj.mongodb.net/?retryWrites=true&w=majority&appName=Places'
+).then(()=>{
+    app.listen(5000);
+}).catch(err=>{
+    console.log(err);
+})
 
-
-
-app.listen(5000);
