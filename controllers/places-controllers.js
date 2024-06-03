@@ -2,6 +2,7 @@ const HttpError=require('../models/http-error');
 const {validationResult}=require('express-validator');
 const {uuid}=require('uuidv4');
 const getCoordsForAddress=require('../util/location');
+const Place=require('../models/place');
 
 
 let DUMMY_PLACES=[
@@ -60,15 +61,22 @@ const createPlace=async(req,res,next)=>{
         return next(error);
     }
 
-    const createdPlace={
-        id: uuid(),
-        title: title,
-        description:description,
-        location:coordinates,
-        address:address,
-        creator:creator
+    const createdPlace=new Place({
+        title,
+        description,
+        address,
+        location: coordinates,
+        image:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_10582863_beautiful-landscape-scenery-with-snow-mountain.html&psig=AOvVaw3Zjw2YV9y9t0Zq8wVZ7eUz&ust=1626075586865000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJjFv6zOmfECFQAAAAAdAAAAABAD',
+        creator
+    });
+
+    try{
+        await createdPlace.save();
+    }catch(err){
+        const error=new HttpError('creating place failed',500);
+        return next (error);
     }
-    DUMMY_PLACES.push(createdPlace);
+
     res.status(201).json({place:createdPlace});
 };
 

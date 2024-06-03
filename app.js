@@ -29,7 +29,7 @@ app.use((error,req,res,next)=>{
 
 
 mongoose.connect(
-    'mongodb+srv://Ray:icecreamhyouka@cluster0.stx6kcj.mongodb.net/?retryWrites=true&w=majority&appName=Places'
+    'mongodb+srv://Ray:icecreamhyouka@cluster0.stx6kcj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 ).then(()=>{
     app.listen(5000);
 }).catch(err=>{
