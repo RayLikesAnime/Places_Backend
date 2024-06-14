@@ -63,7 +63,7 @@ const createPlace=async(req,res,next)=>{
         description,
         address,
         location: coordinates,
-        image:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_10582863_beautiful-landscape-scenery-with-snow-mountain.html&psig=AOvVaw3Zjw2YV9y9t0Zq8wVZ7eUz&ust=1626075586865000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJjFv6zOmfECFQAAAAAdAAAAABAD',
+        image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/330px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg',
         creator
     });
 
