@@ -34,16 +34,16 @@ Before you begin, ensure you have the following installed:
    git clone https://github.com/RayLikesAnime/Places_Backend.git
    cd Places_Backend
    ```
-2. **Install dependencies
+2. **Install dependencies**
    ```bash
    npm install
    ```
-3. **Set up Environment Variables
+3. **Set up Environment Variables**
    ```bash
    MONGODB_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
    ```
-4. **Run the Development Server
+4. **Run the Development Server**
    ```bash
    npm start
    ```
